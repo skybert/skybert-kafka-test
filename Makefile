@@ -5,4 +5,5 @@ compile:
 
 # run maven project
 run:
-	mvn exec:java -Dexec.mainClass="net.skybert.KafkaApp" -Dexec.args="server etc/kafka-test.yaml"
+	mvn exec:java -Dexec.mainClass="net.skybert.kafka.KafkaApp" \
+	  -Dexec.args="server etc/kafka-test.yaml"

@@ -1,4 +1,4 @@
-package net.skybert;
+package net.skybert.kafka;
 
 import static java.lang.System.currentTimeMillis;
 
