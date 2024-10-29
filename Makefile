@@ -2,6 +2,8 @@
 #
 # Author: torstein@skybert.net
 
+all: format run-faster-reads
+
 # Compile app
 compile:
 	mvn clean
@@ -9,8 +11,11 @@ compile:
 
 # Run app
 run:
-	mvn exec:java -Dexec.mainClass="net.skybert.kafka.KafkaApp" \
-	  -Dexec.args="server etc/kafka-test.yaml"
+	mvn exec:java -Dexec.mainClass="net.skybert.kafka.KafkaApp"
+
+run-faster-reads:
+	mvn exec:java -Dexec.mainClass="net.skybert.kafka.KafkaAppFasterReads"
+
 
 # Format the source code
 format:
@@ -22,3 +27,4 @@ upgrade:
 	mvn versions:use-latest-releases \
 	  -DallowMajorUpdates=true \
 	  -Dexcludes='*:*:*:*alpha*,*:*:*:*beta*,*:*:*:*RC*,*:*:*:*M*'
+
